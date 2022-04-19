@@ -53,6 +53,10 @@ class App extends Component {
   // Stophandler for mistakes allows 3 mistakes in total
 
   nextCircle = () => {
+    if (this.state.mistakes > 2) {
+      this.stopHandler();
+      return;
+    }
     let nextActive;
     do {
       nextActive = this.getRndInteger(0, this.state.difficulty - 1);
@@ -68,7 +72,6 @@ class App extends Component {
       });
 
     if (this.state.pressed === false) {
-      console.log('Too slow');
       this.setState(prevState => {
         return {
           mistakes: prevState.mistakes + 1,
@@ -80,9 +83,7 @@ class App extends Component {
       current: nextActive,
       pressed: false,
     });
-    if (this.state.mistakes > 2) {
-      this.stopHandler();
-    }
+
     this.timer = setTimeout(this.nextCircle, this.state.pace);
   };
 
