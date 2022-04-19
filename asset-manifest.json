@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/22kReactSpeed/static/css/main.457d0996.css",
+    "main.js": "/22kReactSpeed/static/js/main.2e470d51.js",
+    "static/media/MetalMan.mp3": "/22kReactSpeed/static/media/MetalMan.dc18b243284841a4543e.mp3",
+    "static/media/gameOver.mp3": "/22kReactSpeed/static/media/gameOver.68223ae9bf1fa127153e.mp3",
+    "static/media/zeus.jpg": "/22kReactSpeed/static/media/zeus.467467da04ab7cf5fe86.jpg",
+    "index.html": "/22kReactSpeed/index.html",
+    "main.457d0996.css.map": "/22kReactSpeed/static/css/main.457d0996.css.map",
+    "main.2e470d51.js.map": "/22kReactSpeed/static/js/main.2e470d51.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.457d0996.css",
+    "static/js/main.2e470d51.js"
+  ]
+}
