@@ -104,19 +104,25 @@ button:hover {
 }
 
 .speed__button:first-child {
-  background-color: rgb(147, 147, 0);
+  background-color: #ccccff;
 }
 
 .speed__button:nth-child(2) {
-  background-color: rgb(0, 94, 0);
+  background-color: #6495ed;
 }
 
 .speed__button:nth-child(3) {
-  background-color: rgb(1, 1, 176);
+  background-color: #40e0d0;
 }
 
 .speed__button:nth-child(4) {
-  background-color: darkorchid;
+  background-color: #9fe2bf;
+}
+.speed__button:nth-child(5) {
+  background-color: #ffbf00;
+}
+.speed__button:nth-child(6) {
+  background-color: #ff7f50;
 }
 
 /* CURRENT SCORE

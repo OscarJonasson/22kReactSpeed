@@ -133,7 +133,6 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <input type="number" onChange={this.difficultyHandler} />
         <h1 className="speed__heading">Zeus Zap</h1>
         <div className="speed__buttons">
           {/* {circles.map((_, i) => (
@@ -151,6 +150,7 @@ class App extends Component {
               id={i}
               click={() => this.clickHandler(i)}
               active={this.state.current === i}
+              disabled={this.state.gameState}
             />
           ))}
         </div>
