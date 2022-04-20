@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import './App.css';
-import circles from './Components/Circles';
 import Circle from './Components/Circle';
 import Buttons from './Components/Buttons';
 import Gameover from './Components/Game-over';

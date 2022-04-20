@@ -105,12 +105,11 @@ button {
 .speed__buttons {
   display: flex;
   justify-content: space-around;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 .speed__button.active {
   background-image: url('./Assets/img/zeus.jpg');
   background-size: cover;
-  background-position: 1%;
   filter: saturate(4);
   box-shadow: 0px 0px 20px yellow;
 }
