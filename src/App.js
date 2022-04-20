@@ -1,10 +1,12 @@
 import { Component } from 'react';
 import './App.css';
+import circles from './Components/Circles';
 import Circle from './Components/Circle';
 import Buttons from './Components/Buttons';
 import Gameover from './Components/Game-over';
 import startSound from './Assets/sounds/MetalMan.mp3';
 import endSound from './Assets/sounds/gameOver.mp3';
+import Difficulty from './Components/Difficulty';
 
 const startMusic = new Audio(startSound);
 const endGameMusic = new Audio(endSound);
@@ -17,7 +19,7 @@ class App extends Component {
     pace: 1000,
     rounds: 0,
     mistakes: 0,
-    difficulty: 6,
+    difficulty: 4,
     current: -1,
     faster: false,
     showGameOver: false,
@@ -25,6 +27,7 @@ class App extends Component {
     pressed: '',
     startMusic: false,
     endMusic: false,
+    lifeChoices: true,
   };
 
   timer = undefined;
@@ -114,7 +117,38 @@ class App extends Component {
     });
   };
 
-  difficulty = Array.from(Array(this.state.difficulty), () => 0);
+  diffUpHandler = () => {
+    console.log('UP');
+    console.log(this.state.difficulty);
+    this.setState(prevState => {
+      return {
+        difficulty: prevState.difficulty + 1,
+      };
+    });
+  };
+
+  diffDownHandler = () => {
+    console.log('DOWN');
+    console.log(this.state.difficulty);
+    this.setState(prevState => {
+      return {
+        difficulty: prevState.difficulty - 1,
+      };
+    });
+  };
+
+  okHandler = () => {
+    console.log('OK');
+    this.setState({
+      lifeChoices: false,
+    });
+  };
+
+  rerendHandler = () => {
+    this.setState({});
+  };
+
+  // difficulty = Array.from(Array(this.state.difficulty), () => 0);
 
   // This changes the state but its always 1 behind, wont re render the circles
   // ASK???
@@ -133,6 +167,13 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        {this.state.lifeChoices && (
+          <Difficulty
+            diffDown={this.diffDownHandler}
+            diffUp={this.diffUpHandler}
+            ok={this.okHandler}
+          />
+        )}
         <h1 className="speed__heading">Zeus Zap</h1>
         <div className="speed__buttons">
           {/* {circles.map((_, i) => (
@@ -141,10 +182,19 @@ class App extends Component {
               id={i}
               click={() => this.clickHandler(i)}
               active={this.state.current === i}
+              disabled={this.state.gameState}
             />
           ))} */}
-
-          {this.difficulty.map((_, i) => (
+          {/* {this.difficulty.map((_, i) => (
+            <Circle
+              key={i}
+              id={i}
+              click={() => this.clickHandler(i)}
+              active={this.state.current === i}
+              disabled={this.state.gameState}
+            />
+          ))} */}
+          {Array.from(Array(this.state.difficulty), () => 0).map((_, i) => (
             <Circle
               key={i}
               id={i}
