@@ -24,23 +24,49 @@ main {
 button {
   font-family: inherit;
   font-size: inherit;
-  padding: 32px;
   border: none;
   border-radius: 3px;
   box-shadow: 0px 0px 8px black;
   cursor: pointer;
 }
 
-.difficulty__btn {
-  height: 1rem;
-  width: 1rem;
+.startStop {
+  height: 5rem;
+  width: 6rem;
+}
+.startStop:hover {
+  background-color: rgb(167, 165, 165);
+}
+
+.difficulty__btn--up,
+.difficulty__btn--down,
+.difficulty__btn--ok {
+  display: inline-block;
+  text-align: center;
+  height: 4rem;
+  width: 4rem;
   margin: 1rem;
   background-color: transparent;
   border-radius: 50%;
+  font-size: 3rem;
+  transition: 200ms;
 }
 
-button:hover {
-  background-color: rgb(167, 165, 165);
+.difficulty__btn--up:hover,
+.difficulty__btn--down:hover,
+.difficulty__btn--ok:hover {
+  filter: hue-rotate(-20deg);
+  transform: scale(1.1);
+}
+
+.difficulty__btn--down {
+  background-color: rgb(49, 190, 255);
+}
+.difficulty__btn--up {
+  background-color: palevioletred;
+}
+.difficulty__btn--ok {
+  background-color: rgb(29, 161, 29);
 }
 
 .container {

@@ -3,7 +3,12 @@ import React from 'react';
 const Buttons = props => {
   return (
     <div className="buttons">
-      <button type={props.type || 'button'} onClick={props.click}>
+      <button
+        style={{ pointerEvents: props.disabled ? 'none' : 'auto' }}
+        className="startStop"
+        type={props.type || 'button'}
+        onClick={props.click}
+      >
         {props.children}
       </button>
     </div>

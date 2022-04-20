@@ -118,27 +118,24 @@ class App extends Component {
   };
 
   diffUpHandler = () => {
-    console.log('UP');
-    console.log(this.state.difficulty);
-    this.setState(prevState => {
-      return {
-        difficulty: prevState.difficulty + 1,
-      };
-    });
+    this.state.difficulty <= 7 &&
+      this.setState(prevState => {
+        return {
+          difficulty: prevState.difficulty + 1,
+        };
+      });
   };
 
   diffDownHandler = () => {
-    console.log('DOWN');
-    console.log(this.state.difficulty);
-    this.setState(prevState => {
-      return {
-        difficulty: prevState.difficulty - 1,
-      };
-    });
+    this.state.difficulty > 3 &&
+      this.setState(prevState => {
+        return {
+          difficulty: prevState.difficulty - 1,
+        };
+      });
   };
 
   okHandler = () => {
-    console.log('OK');
     this.setState({
       lifeChoices: false,
     });
@@ -211,7 +208,9 @@ class App extends Component {
         {this.state.gameState ? (
           <Buttons click={this.stopHandler}>STOP</Buttons>
         ) : (
-          <Buttons click={this.startHandler}>START</Buttons>
+          <Buttons click={this.startHandler} disabled={this.state.lifeChoices}>
+            START
+          </Buttons>
         )}
 
         {this.state.showGameOver && (
